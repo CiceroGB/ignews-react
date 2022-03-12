@@ -31,8 +31,7 @@
             }
 
             &:hover{
-                color: var(--white)
-
+                color: var(--white);
             }
 
             &:active {
@@ -55,6 +54,8 @@
 
     }
 
-
+    button {
+        margin-left:auto;
+    }
 
 }
