@@ -2,6 +2,8 @@ import { GetServerSideProps } from 'next'
 import Head from 'next/head'
 import { stripe } from '../services/stripe'
 
+import styles from './home.module.scss';
+
 interface HomeProps {
   product: {
     priceId: string
@@ -13,12 +15,21 @@ export default function Home({ product }: HomeProps) {
   return (
     <>
       <Head>
-        <title>Inicio | ig.news</title>
+        <title>Home | ig.news</title>
       </Head>
-      <h1 >
+      <main className={styles.contentContainer}>
+      <section className={styles.hero}>
+          <span>👏 Hey, Welcome</span>
+          <h1> News about the <span>React</span> world.</h1>
+          <p>
+            Get acess to all publications <br />
+            <span>for {product.amount} month</span>
+          </p>
+        </section>
 
-        {product.amount}
-    </h1>
+        <img src="/images/avatar.svg" alt="Girl coding" />
+
+      </main>
     </>
   )
 }
